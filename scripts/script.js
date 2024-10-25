@@ -1,43 +1,58 @@
+//====================
+// ! Dark And Light Theme
+//====================
+
 const themeToggle = document.getElementById("themeToggle");
 
-themeToggle.addEventListener("change", function () {
-  const newTheme = themeToggle.checked ? "dark" : "light";
-  document.documentElement.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme") || "dark";
-  document.documentElement.setAttribute("data-theme", savedTheme);
-  themeToggle.checked = savedTheme === "dark";
-});
-
-const cards = document.querySelectorAll(".card");
-const modal = document.getElementById("modal");
-const modalTitle = document.getElementById("modal-title");
-const modalDescription = document.getElementById("modal-description");
-const closeButton = document.querySelector(".close-button");
-
-cards.forEach((card) => {
-  card.addEventListener("click", () => {
-    const title = card.getAttribute("data-title");
-    const description = card.getAttribute("data-description");
-
-    modalTitle.textContent = title;
-    modalDescription.textContent = description;
-
-    modal.style.display = "block";
+// Arrow function to set up the theme toggle
+export const setupThemeToggle = () => {
+  themeToggle.addEventListener("change", () => {
+    const newTheme = themeToggle.checked ? "dark" : "light";
+    console.log(newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
   });
-});
 
-// Close the modal when the close button is clicked
-closeButton.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+    themeToggle.checked = savedTheme === "dark";
+  });
+};
 
-// Close the modal when clicking outside the modal content
-window.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    modal.style.display = "none";
+//====================
+//!  Back to Top Button
+//====================
+
+const myButton = document.getElementById("goToTopBtn");
+
+// Arrow function to set up the scroll button
+export const setupScrollButton = () => {
+  if (!myButton) {
+    console.error("Button with ID 'goToTopBtn' not found.");
   }
-});
+
+  window.onscroll = () => {
+    scrollFunction();
+  };
+
+  const scrollFunction = () => {
+    const scrollTopBody = document.body.scrollTop;
+    const scrollTopHtml = document.documentElement.scrollTop;
+
+    if (scrollTopBody > 400 || scrollTopHtml > 400) {
+      myButton.style.display = "block";
+    } else {
+      myButton.style.display = "none";
+    }
+  };
+
+  myButton.addEventListener("click", () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+};
+
+// Call the setup functions when the script loads
+setupThemeToggle();
+setupScrollButton();

@@ -1,6 +1,7 @@
 :root {
   --background-color: white;
   --text-color: black;
+  --background-linear-gradient: white;
   --text-color-header: rgb(166, 164, 167);
   --button-background: #007bff;
   --button-text: white;

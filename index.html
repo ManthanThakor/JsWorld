@@ -22,7 +22,7 @@
         <div class="toggle-btn" onclick="toggleMenu()">☰</div>
         <div class="nav-links" id="nav-links">
           <a href="index.html" class="nav-link-part">HOME</a>
-          <a href="#brands-section" class="nav-link-part">CARD</a>
+          <a href="#card-sec" class="nav-link-part">CONCEPTS</a>
           <a href="#brands-section" class="nav-link-part">BOX</a>
           <a href="#footer-section" class="nav-link-part">CONTACT</a>
           <label class="toggle-switch">
@@ -37,7 +37,7 @@
 
       <!-- Header Section content-->
       <div class="header-content">
-        <h1>GET YOUR DESIRED CAR AT A REASONABLE PRICE</h1>
+        <h1>WELCOME TO THE JS WORLD</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -47,7 +47,7 @@
     </div>
 
     <!-- Card Section -->
-    <section class="card-section">
+    <section class="card-section" id="card-sec">
       <h2>JavaScript Concepts</h2>
       <div class="card-container">
         <div
@@ -88,6 +88,118 @@
       </div>
     </div>
 
-    <script src="scripts/script.js"></script>
+    <!-- Contact-part -->
+
+    <div class="arcade-section-part" id="contact">
+      <div class="arcade-title-part">
+        <p class="text-uppercase arcade-title">Contact</p>
+      </div>
+    </div>
+
+    <div class="container-fluid footer-section">
+      <div class="footer-head">
+        <p class="text-uppercase footer-title">
+          Feel free to contact us if you need any assistance, any help or
+          another question.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-12">
+          <form action="contact.html" class="contFrm" method="POST">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              class="inptFld foot-name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              class="inptFld foot-email"
+              required
+            />
+            <input
+              type="text"
+              name="sub"
+              placeholder="Subject"
+              class="inptFld foot-numb"
+              required
+            />
+            <textarea
+              class="inptFld foot-message"
+              rows=""
+              cols=""
+              placeholder="Your Message..."
+              required
+            ></textarea>
+            <div class="foot-button">
+              <input
+                type="submit"
+                name="submit"
+                value="SUBMIT"
+                class="inptBtn footer-btn common-btn-part"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="footer-address-section">
+            <i class="fa-solid fa-location-dot" id="foot-icons-part"></i>
+            <p id="add-dis">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              laborum at, eum, dolorem accusantium, deserunt optio adipisci
+              consequatur nostrum cupiditate maxime corporis. Harum maxime
+              aspernatur nostrum atque neque dolor in.
+            </p>
+          </div>
+          <div class="footer-mail-section">
+            <a href="mailto:pixelplay@gmail.com"
+              ><i class="fa-solid fa-envelope" id="foot-icons-part"></i
+            ></a>
+            <a href="mailto:pixelplay@gmail.com" id="mail-dis"
+              >jsworld@gmail.com</a
+            >
+          </div>
+          <div class="footer-number-section">
+            <a href="tel:+91 123-456-7899"
+              ><i class="fa-solid fa-phone" id="foot-icons-part"></i
+            ></a>
+            <a href="tel:+91 123-456-7899" id="num-dis">+91 123-456-7899</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---Copy right section--- -->
+
+    <div class="copyright-section">
+      <div class="copy-right-text">
+        <p>Copyright © JS-WORLD 2024, All Rights Reserved.</p>
+      </div>
+
+      <div class="copyright-fonts">
+        <a class="font-cont" href="http://www.facebook.com"
+          ><i class="fa-brands fa-facebook-f" id="fonts-event"></i
+        ></a>
+        <a class="font-cont" href="http://www.twitter.com"
+          ><i class="fa-brands fa-twitter" id="fonts-event"></i
+        ></a>
+        <a class="font-cont" href="http://www.pinterest.com"
+          ><i class="fa-brands fa-pinterest" id="fonts-event"></i
+        ></a>
+        <a class="font-cont" href="http://www.instagram.com"
+          ><i class="fa-brands fa-instagram" id="fonts-event"></i
+        ></a>
+      </div>
+    </div>
+    <button onclick="goToTop()" id="goToTopBtn" title="Go to top">
+      <i class="fa-solid fa-chevron-up" id="top-btn-par"></i>
+    </button>
+    <div id="star-container"></div>
+
+    <script type="module" src="scripts/index.js"></script>
   </body>
 </html>
