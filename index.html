@@ -3,12 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+
     <title>JsWorld</title>
   </head>
   <body>
-    <h1>Welcome to JsWorld</h1>
     <button id="themeToggle">Toggle Theme</button>
+    <!-- =========== -->
+    <!-- Header Section -->
+    <!-- =========== -->
+
+    <div class="header">
+      <!-- =========== -->
+      <!-- Navbar Section -->
+      <!-- =========== -->
+
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html" class="logo-name">CARVILLA</a>
+        </div>
+        <div class="toggle-btn" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html" class="nav-link-part">HOME</a>
+          <a href="#car-service-part-sec" class="nav-link-part">SERVICE</a>
+          <a href="#featured-car-sec" class="nav-link-part">FEATURED CARS</a>
+          <a href="#New-car-section" class="nav-link-part">NEW CARS</a>
+          <a href="#brands-section" class="nav-link-part">BRANDS</a>
+          <a href="#footer-section" class="nav-link-part">CONTACT</a>
+        </div>
+      </div>
+      <!-- =========== -->
+      <!-- Header Section content-->
+      <!-- =========== -->
+      <div class="header-content">
+        <h1>GET YOUR DESIRED CAR IN RESONABLE PRICE</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <button>Contact Us</button>
+      </div>
+    </div>
     <script src="scripts/script.js"></script>
   </body>
 </html>

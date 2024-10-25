@@ -1,0 +1,11 @@
+@import url("../styles/styles.css");
+
+.section {
+  padding: 40px;
+  text-align: center;
+}
+
+#welcome {
+  /* background: var(--background-linear-gradient); */
+  color: var(--text-color);
+}
