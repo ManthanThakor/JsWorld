@@ -4,39 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/index.css" />
+    <script
+      src="https://kit.fontawesome.com/cb104e752f.js"
+      crossorigin="anonymous"
+    ></script>
 
     <title>JsWorld</title>
   </head>
   <body>
-    <button id="themeToggle">Toggle Theme</button>
-    <!-- =========== -->
     <!-- Header Section -->
-    <!-- =========== -->
-
     <div class="header">
-      <!-- =========== -->
       <!-- Navbar Section -->
-      <!-- =========== -->
-
       <div class="navbar">
         <div class="logo">
-          <a href="index.html" class="logo-name">CARVILLA</a>
+          <a href="index.html" class="logo-name">JS-WORLD</a>
         </div>
         <div class="toggle-btn" onclick="toggleMenu()">☰</div>
         <div class="nav-links" id="nav-links">
           <a href="index.html" class="nav-link-part">HOME</a>
-          <a href="#car-service-part-sec" class="nav-link-part">SERVICE</a>
-          <a href="#featured-car-sec" class="nav-link-part">FEATURED CARS</a>
-          <a href="#New-car-section" class="nav-link-part">NEW CARS</a>
-          <a href="#brands-section" class="nav-link-part">BRANDS</a>
+          <a href="#brands-section" class="nav-link-part">CARD</a>
+          <a href="#brands-section" class="nav-link-part">BOX</a>
           <a href="#footer-section" class="nav-link-part">CONTACT</a>
+          <label class="toggle-switch">
+            <input type="checkbox" id="themeToggle" />
+            <span class="toggle-slider">
+              <i class="fas fa-moon moon-icon"></i>
+              <i class="fas fa-sun sun-icon"></i>
+            </span>
+          </label>
         </div>
       </div>
-      <!-- =========== -->
+
       <!-- Header Section content-->
-      <!-- =========== -->
       <div class="header-content">
-        <h1>GET YOUR DESIRED CAR IN RESONABLE PRICE</h1>
+        <h1>GET YOUR DESIRED CAR AT A REASONABLE PRICE</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -44,6 +45,49 @@
         <button>Contact Us</button>
       </div>
     </div>
+
+    <!-- Card Section -->
+    <section class="card-section">
+      <h2>JavaScript Concepts</h2>
+      <div class="card-container">
+        <div
+          class="card"
+          data-title="Variables"
+          data-description="Learn about var, let, and const and when to use each."
+        >
+          <h3><i class="fa-solid fa-signal"></i> Variables</h3>
+          <p>Learn about var, let, and const and when to use each.</p>
+        </div>
+        <div
+          class="card"
+          data-title="Functions"
+          data-description="Discover function declarations, expressions, and arrow functions."
+        >
+          <h3><i class="fa-solid fa-code"></i> Functions</h3>
+          <p>
+            Discover function declarations, expressions, and arrow functions.
+          </p>
+        </div>
+        <div
+          class="card"
+          data-title="DOM Manipulation"
+          data-description="Interact with the HTML document structure using JavaScript."
+        >
+          <h3><i class="fa-solid fa-laptop-code"></i> DOM Manipulation</h3>
+          <p>Interact with the HTML document structure using JavaScript.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+
     <script src="scripts/script.js"></script>
   </body>
 </html>

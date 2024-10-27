@@ -1,8 +1,14 @@
 :root {
   --background-color: white;
   --text-color: black;
+  --text-color-header: rgb(166, 164, 167);
   --button-background: #007bff;
   --button-text: white;
+  --header-background-light: linear-gradient(
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
+    url("../images/backgrounds/CarHomePageLight.jpg");
 }
 
 [data-theme="dark"] {
@@ -18,9 +24,13 @@
     #220010,
     #1a0000
   );
-
+  --header-background-dark: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../images/backgrounds/CarHomePage.jpg");
+  --text-color-header: rgb(255, 255, 255);
   --text-color: white;
-  --text-color-two: rgb(53, 255, 3);
   --button-background: #444;
   --button-text: #ddd;
 }
@@ -32,7 +42,6 @@
 }
 
 body {
-  /* background-color: var(--background-color); */
   background: var(--background-linear-gradient);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
