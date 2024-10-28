@@ -32,6 +32,37 @@ window.addEventListener("click", (event) => {
     modal.style.display = "none";
   }
 });
+
+//====================
+// !  JavaScript Concepts Card section
+//====================
+
+document.getElementById("alertBtn").addEventListener("click", showAlert);
+document.getElementById("confirmBtn").addEventListener("click", showConfirm);
+document.getElementById("promptBtn").addEventListener("click", showPrompt);
+
+function showAlert() {
+  alert("This is an alert box. It just displays a message.");
+}
+
+function showConfirm() {
+  const confirmed = confirm("Do you confirm this action?");
+  const resultDiv = document.getElementById("popup-result");
+  resultDiv.textContent = confirmed
+    ? "You confirmed the action!"
+    : "You canceled the action!";
+}
+
+function showPrompt() {
+  const response = prompt("Please enter your name:", "Guest");
+  const resultDiv = document.getElementById("popup-result");
+  resultDiv.textContent = response
+    ? `Hello, ${response}!`
+    : "You didn't enter your name .";
+}
+
+//==========================================================
 // Call the imported setup functions
+//==========================================================
 setupThemeToggle();
 setupScrollButton();

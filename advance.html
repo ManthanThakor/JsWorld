@@ -31,18 +31,12 @@
               height="40"
           /></a>
         </div>
-        <div class="toggle-btn" onclick="toggleMenu()">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
+        <div class="toggle-btn" onclick="toggleMenu()">☰</div>
         <div class="nav-links" id="nav-links">
           <a href="index.html" class="nav-link-part">HOME</a>
           <a href="#card-sec" class="nav-link-part">CONCEPTS</a>
-          <a href="#popup-section" class="nav-link-part">BOXES</a>
-          <a href="#contact-section" class="nav-link-part">CONTACT</a>
-          <a href="advance.html" class="nav-link-part">ADVANCE</a>
-
+          <a href="#brands-section" class="nav-link-part">BOX</a>
+          <a href="#footer-section" class="nav-link-part">CONTACT</a>
           <label class="toggle-switch">
             <input type="checkbox" id="themeToggle" />
             <span class="toggle-slider">
@@ -63,110 +57,6 @@
         <button class="btn-header">Contact Us</button>
       </div>
     </div>
-
-    <!-- Card Section -->
-    <section class="card-section" id="card-sec">
-      <h2>JavaScript Concepts</h2>
-      <div class="card-container">
-        <div
-          class="card"
-          data-title="Variables"
-          data-description="Learn about var, let, and const and when to use each."
-        >
-          <h3><i class="fa-solid fa-signal"></i> Variables</h3>
-          <p>Learn about var, let, and const and when to use each.</p>
-        </div>
-        <div
-          class="card"
-          data-title="Functions"
-          data-description="Discover function declarations, expressions, and arrow functions."
-        >
-          <h3><i class="fa-solid fa-code"></i> Functions</h3>
-          <p>
-            Discover function declarations, expressions, and arrow functions.
-          </p>
-        </div>
-        <div
-          class="card"
-          data-title="DOM Manipulation"
-          data-description="Interact with the HTML document structure using JavaScript."
-        >
-          <h3><i class="fa-solid fa-laptop-code"></i> DOM Manipulation</h3>
-          <p>Interact with the HTML document structure using JavaScript.</p>
-        </div>
-        <div
-          class="card"
-          data-title="Arrays"
-          data-description="Learn about array methods and manipulation."
-        >
-          <h3><i class="fa-solid fa-layer-group"></i> Arrays</h3>
-          <p>Learn about array methods and manipulation.</p>
-        </div>
-
-        <div
-          class="card"
-          data-title="Objects"
-          data-description="Understand object properties, methods, and inheritance."
-        >
-          <h3><i class="fa-solid fa-cube"></i> Objects</h3>
-          <p>Understand object properties, methods, and inheritance.</p>
-        </div>
-
-        <div
-          class="card"
-          data-title="Asynchronous JavaScript"
-          data-description="Explore callbacks, promises, and async/await."
-        >
-          <h3><i class="fa-solid fa-clock"></i> Asynchronous JavaScript</h3>
-          <p>Explore callbacks, promises, and async/await.</p>
-        </div>
-
-        <div
-          class="card"
-          data-title="Events"
-          data-description="Learn how to handle events and event listeners."
-        >
-          <h3><i class="fa-solid fa-mouse-pointer"></i> Events</h3>
-          <p>Learn how to handle events and event listeners.</p>
-        </div>
-
-        <div
-          class="card"
-          data-title="Error Handling"
-          data-description="Learn about try-catch blocks and debugging."
-        >
-          <h3><i class="fa-solid fa-bug"></i> Error Handling</h3>
-          <p>Learn about try-catch blocks and debugging.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Modal Structure -->
-    <div id="modal" class="modal-sec">
-      <div class="modal-content-one">
-        <span class="close-button">&times;</span>
-        <h3 id="modal-title"></h3>
-        <p id="modal-description"></p>
-      </div>
-    </div>
-
-    <!-- Popup Section -->
-    <section id="popup-section">
-      <h2>Popup Boxes</h2>
-      <p>
-        JavaScript provides three types of popup boxes: <strong>alert</strong>,
-        <strong>confirm</strong>, and <strong>prompt</strong>. Click the buttons
-        below to see each type in action.
-      </p>
-
-      <div class="popup-buttons">
-        <button id="alertBtn">Alert Box</button>
-        <button id="confirmBtn">Confirm Box</button>
-        <button id="promptBtn">Prompt Box</button>
-      </div>
-
-      <div id="popup-result" class="result"></div>
-    </section>
 
     <!-- discord-part -->
 
@@ -190,11 +80,10 @@
         </a>
       </div>
     </div>
-
     <!-- Contact-part -->
 
     <div class="container-fluid footer-section">
-      <div class="contact-us-sec sec-title" id="contact-section">
+      <div class="contact-us-sec sec-title" id="contact">
         <div class="sec-title-part">
           <p class="text-uppercase sec-t">Contact US</p>
         </div>

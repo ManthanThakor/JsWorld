@@ -7,18 +7,24 @@ html {
 /* ===== Header section ===== */
 
 .header {
-  background: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.589)),
-    url("https://images5.alphacoders.com/137/thumb-1920-1377827.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.836), rgba(0, 0, 0, 0.788)),
+    url("https://wallpapers.com/images/featured/javascript-pnr9lrhwaigq76mb.jpg");
   height: 600px;
   position: relative;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  box-shadow: var(--box-shadow);
 }
 
+/* ===== toggle-btn for hamburger ===== */
+
+.toggle-btn {
+  display: none;
+}
 /* ===== Navbar section ===== */
 
-.navbar {
+.navbar-sec {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,20 +54,30 @@ html {
   text-decoration: none;
   font-weight: 600;
   font-size: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link-part::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #6c63ff;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link-part:hover::after {
+  width: 100%; /* Extend the underline on hover */
+  left: 0; /* Align to the left */
 }
 .navbar a:hover {
   color: #6c63ff;
   cursor: pointer;
 }
 
-/* ===== Toggle Button ===== */
-
-.toggle-btn {
-  display: none;
-  font-size: 24px;
-  color: var(--white);
-  cursor: pointer;
-}
 /* ===== Header content section ===== */
 
 .header-content {
@@ -88,21 +104,23 @@ html {
   font-weight: 500;
 }
 
-.header-content button {
-  background-color: #6c63ff;
-  color: var(--white);
+.btn-header {
+  background: var(--btn-background);
+  color: var(--text-color);
   border: none;
   padding: 15px 35px;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   border-radius: 5px;
 }
 
-.header-content button:hover {
+.btn-header:hover {
   background-color: #5753d6;
 }
 
-/* Toggle Switch Styling */
+/* ===== toggle-switch section ===== */
+
 .toggle-switch {
   position: relative;
   display: inline-block;
@@ -124,11 +142,28 @@ html {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: 0.4s;
+  transition: background-color 0.4s ease-in-out;
   border-radius: 34px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.toggle-slider:before {
+  content: "";
+  position: absolute;
+
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: #6c63ff;
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(25px);
 }
 
 .toggle-slider .moon-icon,
@@ -138,7 +173,6 @@ html {
   transition: opacity 0.3s ease;
 }
 
-/* Hide the sun icon in dark mode and moon icon in light mode */
 [data-theme="dark"] .sun-icon {
   opacity: 1;
 }
@@ -158,15 +192,30 @@ html {
 /* ------ Card Section------------ */
 
 .card-section {
-  padding: 40px;
+  padding: 60px 60px;
   text-align: center;
   background: var(--background-linear-gradient);
   color: var(--text-color);
+  box-shadow: var(--box-shadow);
 }
 
 .card-section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  padding-bottom: 40px;
+  text-transform: uppercase;
+  position: relative;
+}
+.card-section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 20%;
+  height: 3px;
+  background-color: var(--bottom-line-sec);
+  transform: translateX(-50%);
 }
 
 .card-container {
@@ -197,7 +246,7 @@ html {
 }
 
 /* Modal Styles */
-.modal {
+.modal-sec {
   display: none;
   position: fixed;
   z-index: 1;
@@ -210,7 +259,7 @@ html {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal-content {
+.modal-content-one {
   background: var(--background-linear-gradient);
   color: var(--text-color);
   margin: 15% auto;
@@ -234,54 +283,194 @@ html {
   cursor: pointer;
 }
 
-/* -====================== */
 /*-----------------------------------*\
-              ARCADE 
+       Popup Section Styles
 \*-----------------------------------*/
-.arcade-section-part {
-  padding: 0px 80px 0px 80px !important;
-  background-color: rgb(0, 0, 0);
+
+#popup-section {
+  padding: 60px 140px 60px 140px !important;
+  background-color: var(--background-linear-gradient);
+  box-shadow: var(--box-shadow);
 }
 
-.arcade-title {
-  font-family: sans-serif, serif !important;
-  font-weight: 800 !important;
-  font-size: 40px !important;
-  letter-spacing: 3px;
-  color: aliceblue;
-  margin-bottom: 0 !important;
+#popup-section h2 {
+  font-size: 30px;
+  color: var(--text-color);
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+#popup-section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 20%;
+  height: 3px;
+  background-color: var(--bottom-line-sec);
+  transform: translateX(-50%);
+}
+
+#popup-section p {
+  font-size: 18px;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.popup-buttons button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  background: var(--btn-background);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-buttons button:hover {
+  background: linear-gradient(144deg, #7e57c2, #6c5fc7 50%, #455a64);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.result {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--text-color);
   text-align: center;
 }
 
-.arcade-title-part {
-  display: flex;
-  flex-direction: row;
-  border-top: solid 1px #fefefe;
-  border-bottom: solid 1px #fefefe;
-  box-shadow: 0px -15px 15px -15px #fefefe, 0px 15px 15px -15px #fefefe; /* bottom shadow */
-  justify-content: center;
+/*-----------------------------------*\
+      DISCORD-JOIN PART
+\*-----------------------------------*/
+.discord-part-joinn {
+  box-shadow: 0px -15px 15px -15px #fefefe, 0px 15px 15px -15px #fefefe;
+  background: linear-gradient(rgba(0, 0, 0, 0.774), rgba(0, 0, 0, 0.605)),
+    url(../images/backgrounds/discord/discord-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  box-shadow: var(--box-shadow);
+}
+
+.dis-h {
+  text-align: center;
+  padding-top: 12rem !important;
+  padding-bottom: 12rem !important;
+}
+
+.dis-heading-title {
+  color: #ffffff;
+  font-family: "Barlow", Sans-serif;
+  font-size: 55px;
+  font-weight: 800;
+  line-height: 1.2em;
+  letter-spacing: 3px;
+  text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.33);
+  margin-bottom: 0%;
+}
+
+.dis-heading-title-two {
+  color: #45f882;
+}
+
+.dis-heading-title-three {
+  margin-bottom: 0%;
+  color: #fefefe;
+  font-family: "Poppins", Sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.75em;
+  letter-spacing: 0.9px;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.dis-join-btn {
+  padding: 10px 15px;
+  color: var(--text-color);
+  background: var(--btn-background);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-out 0s;
+}
+
+.dis-btn-dis {
+  color: var(--text-color);
+  transition: all 0.3s ease-out 0s;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 500;
+}
+.dis-join-btn:hover {
+  background: linear-gradient(144deg, #7e57c2, #6c5fc7 50%, #455a64);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  .dis-btn-dis {
+    color: var(--background-color);
+  }
 }
 
 /*-----------------------------------*\
               Contact us
 \*-----------------------------------*/
+
 .footer-section {
-  padding: 60px 80px 60px 80px !important;
-  background-color: rgba(0, 0, 0, 0.95);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  padding: 60px 140px 60px 140px !important;
+  background: var(--background-linear-gradient);
+  box-shadow: var(--box-shadow);
+}
+
+.contact-us-sec {
+  text-align: center;
+  align-items: center;
+}
+.sec-t {
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 3px;
+  padding-bottom: 40px;
+  color: var(--text-color);
+  margin-bottom: 0 !important;
+  text-align: center;
+  position: relative;
+  align-items: center;
+  display: inline-block;
+}
+
+.sec-t::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 80%;
+  height: 3px;
+  background-color: var(--bottom-line-sec);
+  transform: translateX(-50%);
 }
 
 .footer-head {
   padding: 0 0 30px 0 !important;
 }
 .footer-head .footer-title {
-  letter-spacing: 1px;
-  color: #00ff00;
-  font-family: "Starzone", "sans-serif", "serif" !important;
-  font-weight: 700 !important;
-  font-size: 25px !important;
+  text-align: center;
+  color: var(--text-color-uniq);
+  font-weight: 600;
+  font-size: 22px;
 }
 
 .foot-name,
@@ -290,28 +479,31 @@ html {
 .foot-message {
   border-radius: 15px;
   border: 1px solid;
-  background-color: #000000;
+  background-color: var(--background-color);
   width: 90%;
   margin: 10px 0 !important;
   padding: 4px 15px !important;
   font-style: italic;
-  color: aliceblue;
+  color: var(--text-color);
   outline: none;
 }
 
 .foot-button {
-  margin-top: 20px !important;
+  margin-top: 15px !important;
 }
 .foot-button .footer-btn {
   letter-spacing: 1px;
-  color: #ffffff;
+  background-color: var(--text-color);
+  color: var(--background-color);
   font-size: 18px;
-  height: 50px !important;
-  width: 140px !important;
+  width: 140px;
+  padding: 10px;
   border-radius: 18px;
   border: none;
 }
-
+.footer-btn:hover {
+  color: var(--text-color-uniq);
+}
 .copyright-section,
 .footer-mail-section,
 .footer-number-section,
@@ -329,15 +521,15 @@ html {
 #mail-dis:hover,
 #foot-icons-part:hover {
   cursor: pointer;
-  color: #fefefe;
+  color: var(--text-color);
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a19b9e, 0 0 40px #4e4a4c,
     0 0 50px #e60073, 0 0 60px #393738, 0 0 70px #96848d;
-  color: #ffffff;
 }
 
 #foot-icons-part {
-  font-size: 25px !important;
-  color: #fefefe;
+  font-size: 18px;
+  padding-top: 5px;
+  color: var(--text-color);
 }
 #num-dis,
 #mail-dis {
@@ -349,12 +541,10 @@ html {
 #add-dis {
   letter-spacing: 1px;
   line-height: 25px;
-  color: #fefefe;
+  color: var(--text-color);
   font-style: italic;
-  font-family: "Roboto";
-  font-weight: bold;
-  font-size: 20px;
-  padding: 0 0 0 20px !important;
+  font-size: 18px;
+  padding: 0 0 0 20px;
   margin-bottom: 0;
 }
 
@@ -365,21 +555,20 @@ html {
 /*-----------------------------------*\
               copy-right 
 \*-----------------------------------*/
+
 .copyright-section {
-  padding: 30px 80px 30px 80px !important;
-  background-color: #000000;
-  border-top: solid 2px #fefefe;
-  box-shadow: 0px -15px 15px -15px #fefefe;
+  padding: 20px 140px 20px 140px !important;
+  background-color: var(--background-color);
+  border-top: solid 2px var(--text-color);
+  box-shadow: var(--box-shadow);
 }
 
 .copy-right-text p {
   letter-spacing: 0px;
-  line-height: 35px;
-  color: #fefefe;
+  color: var(--text-color);
   margin-bottom: 0%;
-  font-family: "Helvetica Neue", Helvetica, Arial !important;
-  font-weight: 600 !important;
-  font-size: 22px !important;
+  font-weight: 500 !important;
+  font-size: 18px;
 }
 
 .copyright-fonts {
@@ -389,14 +578,13 @@ html {
 }
 
 #fonts-event {
-  width: 40px;
-  height: 40px;
-  background-color: #fefefe;
+  width: 30px;
+  height: 30px;
+  background-color: var(--text-color);
   text-align: center;
-  /* line-height: 80px; */
-  font-size: 25px;
+  font-size: 16px;
   padding: 5px;
-  color: #000;
+  color: var(--background-color);
   display: block;
   border-radius: 50%;
   position: relative;
@@ -404,7 +592,6 @@ html {
   border: 3px solid #fefefe;
   z-index: 1;
   transition: 0.5s;
-  box-shadow: 0px -1px 20px 0px hsla(0, 100%, 50%, 0.745);
 }
 
 .font-cont {
@@ -421,6 +608,7 @@ html {
 /*-----------------------------------*\
               #GO TO TOP
 \*-----------------------------------*/
+
 #goToTopBtn {
   display: none;
   position: fixed;
